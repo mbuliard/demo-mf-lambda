@@ -7,14 +7,19 @@
         "php": ">=8.4",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "aws/aws-sdk-php": "^3.369",
+        "bref/bref": "^2.4",
+        "bref/symfony-bridge": "^1.1",
         "symfony/console": "8.0.*",
         "symfony/dotenv": "8.0.*",
         "symfony/flex": "^2",
+        "symfony/form": "8.0.*",
         "symfony/framework-bundle": "8.0.*",
+        "symfony/routing": "8.0.*",
         "symfony/runtime": "8.0.*",
+        "symfony/twig-bundle": "8.0.*",
+        "symfony/validator": "8.0.*",
         "symfony/yaml": "8.0.*"
-    },
-    "require-dev": {
     },
     "config": {
         "allow-plugins": {

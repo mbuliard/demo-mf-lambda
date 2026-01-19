@@ -3,7 +3,11 @@ framework:
     secret: '%env(APP_SECRET)%'
 
     # Note that the session will be started ONLY if you read or write from it.
-    session: true
+    session: false
+    # trust the remote address because API Gateway has no fixed IP or CIDR range that we can target
+    trusted_proxies: '127.0.0.1'
+    # trust "X-Forwarded-*" headers coming from API Gateway
+    trusted_headers: [ 'x-forwarded-for', 'x-forwarded-proto', 'x-forwarded-port' ]
 
     #esi: true
     #fragments: true

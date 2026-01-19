@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Hello</title>
+</head>
+<body>
+  <h1>Hello World</h1>
+
+  {% for label, messages in app.flashes %}
+    {% for message in messages %}
+      <div class="flash {{ label }}">{{ message }}</div>
+    {% endfor %}
+  {% endfor %}
+
+  {{ form_start(form) }}
+  {{ form_row(form.message) }}
+  {{ form_row(form.secret) }}
+  {{ form_row(form.submit) }}
+  {{ form_end(form) }}
+</body>
+</html>
