@@ -1,5 +1,5 @@
 # Read the documentation at https://bref.sh/docs/symfony/getting-started
-service: symfony
+service: publisher
 
 # Set your team ID if you are using Bref Cloud
 bref:
@@ -10,6 +10,7 @@ provider:
     region: us-east-1
     environment:
         APP_ENV: prod
+        APP_DEBUG: '0'
         SQS_QUEUE_URL:
             Ref: DemoMidiFormationQueue
     iam:
@@ -28,19 +29,12 @@ plugins:
 
 functions:
 
-    # This function runs the Symfony website/API
     web:
         handler: public/index.php
         runtime: php-84-fpm
-        timeout: 28 # in seconds (API Gateway has a timeout of 29 seconds)
+        timeout: 28
         events:
             - httpApi: '*'
-
-    # This function let us run console commands in Lambda
-    console:
-        handler: bin/console
-        runtime: php-84-console
-        timeout: 120 # in seconds
 
 package:
     patterns:
